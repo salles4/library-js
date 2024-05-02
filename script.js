@@ -17,5 +17,6 @@ supabase.from("books").select("id, title, author(name)")
             </li>
         `)
     })
+    $("#loading").remove()
 })
 

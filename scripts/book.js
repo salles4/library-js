@@ -21,4 +21,6 @@ supabase.from("books").select("title, description, author(name), publisher(name)
     $("#book-description").html(row.description)
     $("#book-author").html(row.author.name)
     $("#book-publisher").html(row.publisher.name)
+    
+    $("#loading").remove()
 })
