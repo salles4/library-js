@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Book</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/add-book.js" type="module"></script>
 </head>
 <body>
     <label for="book-name">Book Title: </label>
     <input type="text" id="book-name">
 
     <label for="author">Author: </label>
-    <input list="authors" type="text" id="author" >
+    <input list="authors" type="text" id="author" autocomplete="off" >
 
     <label for="publisher">Publisher: </label>
-    <input type="text" id="publisher">
+    <input type="text" id="publisher" autocomplete="off">
 
     <button id="add">Add Book</button>
     <a href="index.html">
@@ -21,7 +23,8 @@
     </a>
 
     <datalist id="authors">
-        <option value="Jemma">
+        <option value="Jemma Development Group">
+        <option value="Richard Osman">
     </datalist>
 </body>
 </html>
