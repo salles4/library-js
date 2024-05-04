@@ -3,8 +3,8 @@ import supabase from "./supabase.js";
 let queryString = window.location.search;
 let queryParams = new URLSearchParams(queryString.substring(1));
 let BOOKID
-if (queryParams.has("book")) {
-    BOOKID = decodeURIComponent(queryParams.get("book"));
+if (queryParams.has("id")) {
+    BOOKID = decodeURIComponent(queryParams.get("id"));
 }
 
 // SELECT title, description, a.name author, p.name publisher 
@@ -21,6 +21,6 @@ supabase.from("books").select("title, description, author(name), publisher(name)
     $("#book-description").html(row.description)
     $("#book-author").html(row.author.name)
     $("#book-publisher").html(row.publisher.name)
-    
+    $("#book-cover").append(`<img src="img/${BOOKID}.jpg" alt="book cover" width="200">`)
     $("#loading").remove()
 })

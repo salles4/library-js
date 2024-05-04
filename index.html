@@ -16,7 +16,7 @@
     <div id="nav">
         <script>$("#nav").load("templates/navbar.html")</script>
     </div>
-
+    <!-- Carousel Container -->
     <div id="homeAdCarousel" class="carousel slide container" data-bs-ride="carousel" data-bs-interval="8000">
         <div class="carousel-inner" style="height: 250px;">
             <div class="carousel-item active">
@@ -41,7 +41,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
+    <!-- Carousel End -->
     <section class="container">
         <div id="title" class="border-bottom border-2 d-flex justify-content-between">
             <h2 class="my-3"><i class="bi bi-journal"></i> Books</h2>
@@ -49,13 +49,38 @@
                 <button class="btn btn-primary btn-sm">See All ></button>
             </div>
         </div>
+        <div class="d-flex justify-content-center" id="loading">
+            <div class="spinner-grow text-primary m-5" role="status"></div>
+        </div>
+        <div class="row">
+            
+        </div>
         <ul id="book-list">
-            <div class="d-flex justify-content-center" id="loading">
-                <div class="spinner-grow text-primary m-5" role="status"></div>
-            </div>
         </ul>
     </section>
-
+    <style>
+        .card:hover {
+            transform: scale(105%);
+        }
+        .card {
+            transition: 300ms;
+            cursor: pointer;
+        }
+        .card img{
+            height: 200px; 
+            object-fit: contain;
+            padding: 1rem;
+        }
+        .card .btn{
+            visibility: hidden;
+        }
+        .card:hover .btn{
+            visibility: visible;
+        }
+        .row{
+            margin-bottom: 30vh;
+        }
+    </style>
 </body>
 
 </html>
