@@ -9,14 +9,7 @@ supabase.from("books").select("id, title, author(name)")
 
 .then(response => {
     response.data.forEach(row => {
-        // $("#book-list").append(`
-        //     <li>
-        //         <a href="book.html?book=${row.id}">
-        //             ${row.title} (${row.author.name})
-        //         </a>
-        //     </li>
-        // `)
-        $(".row").append(`
+        $("#book-list").append(`
             <div class="card col-lg-3 col-6" data-book-id="${row.id}">
                 <img src="img/${row.id}.jpg">
                 <div class="card-body">
@@ -34,6 +27,6 @@ supabase.from("books").select("id, title, author(name)")
         const id = event.target.closest("div[data-book-id]").getAttribute("data-book-id");
         window.location = `book.html?id=${id}`
     })
-    $("#loading").remove()
+    $("#book-loading").remove()
 })
 
