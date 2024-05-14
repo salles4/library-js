@@ -29,4 +29,14 @@ supabase.from("books").select("id, title, author(name)")
     })
     $("#book-loading").remove()
 })
-
+.catch(error => {
+    $("#book-loading").html(`
+        <div class="d-flex align-items-center justify-content-center my-3">
+            <div class="text-center">
+                <h2>Error</h2>
+                <p>${error.code}: ${error.message}</p>
+                <a href="index.html" class="fw-bold">Reload</a> 
+            </div>
+        </div>
+    `)
+})
